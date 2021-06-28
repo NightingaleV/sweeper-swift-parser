@@ -1,3 +1,4 @@
+import pandas
 import pandas as pd
 import src.swift_parser as sp
 from datetime import datetime
@@ -5,13 +6,13 @@ from datetime import datetime
 
 startTime = datetime.now()
 
-# 13000
-# 42
-swift_file_path = './data/SWIFT_Field_Parsing_Large.txt'
-# swift_file_path = './data/MT103_example_removed_121.txt'
-results = sp.main(file=swift_file_path, dataFrames={})
-
-print(datetime.now() - startTime)
+# # 13000
+# # 42 minut
+# swift_file_path = './data/SWIFT_Field_Parsing_Large.txt'
+# # swift_file_path = './data/MT103_example_removed_121.txt'
+# results = sp.main(file=swift_file_path, dataFrames={})
+#
+# print(datetime.now() - startTime)
 # REF ID, SWIFT ID, FIELD, VALUE
 #
 # output_dict = results['103'][0]
@@ -31,3 +32,6 @@ print(datetime.now() - startTime)
 # df = pd.DataFrame(data=table_of_msgs, columns=['ref_id', 'transaction_id', 'field_name', 'field_value'])
 #
 # df.to_pickle('./data/output/output_dataframe.pkl')
+
+
+df = pandas.read_pickle('./data/output/output_dataframe.pkl')
